@@ -4,7 +4,8 @@ import {Sisyphe} from '../../sisyphe';
 
 @Component({
   selector: 'app-site-see',
-  templateUrl: 'site-see.html'
+  templateUrl: 'site-see.html',
+  styleUrls: ['site-see.scss']
 })
 export class SiteSeeComponent{
 
@@ -14,11 +15,17 @@ export class SiteSeeComponent{
   content: string;
   gallery: any = [];
 
+
+  _site: Site;
+  loading: boolean;
+
   siteName = '';
 
 
   @Input()
   set site(site: Site) {
+    this._site = site;
+    this.loading = true;
     this.title = this.subtitle = this.resume = this.content = '';
     console.log('site', site.name);
     this.title = site.name;
@@ -27,17 +34,24 @@ export class SiteSeeComponent{
       this.sisyphe.getSite(site.name)
         .subscribe((result) => {
           console.log(result);
-          this.gallery = result.data.gallery || [];
-          this.title = result.data.title;
-          this.subtitle = result.data.subtitle;
-          this.resume = result.data.content[0];
-          this.content = result.data.content[1];
+          if (result.data) {
+            this.gallery = result.data.gallery || [];
+            this.title = result.data.title;
+            this.subtitle = result.data.subtitle;
+            this.resume = result.data.content[0];
+            this.content = result.data.content[1];
+
+          }
+
+          this.loading = false;
           console.log(this.gallery);
         });
     }
   }
 
-  constructor(private sisyphe: Sisyphe) {}
+  constructor(private sisyphe: Sisyphe) {
+    this.loading = false;
+  }
 
 
 }

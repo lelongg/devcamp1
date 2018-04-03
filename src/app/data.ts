@@ -14,7 +14,7 @@ export class DataApp {
           48.270028317,
           2.43588126966
         ],
-        "nom_du_site": "Le dessus-de-Rochefort",
+        "nom_du_site": "Le dessus-de-Rochefortd",
         "date_fin": "2003-10-30",
         "type_d_intervention": "fouille",
         "date_debut": "2003-08-01"

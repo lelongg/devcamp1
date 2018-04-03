@@ -1,26 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  <h1>Devcamp</h1>
-</mat-toolbar>
-
 <div class="content">
   <agm-map [latitude]="location.latitude" [longitude]="location.longitude">
     <agm-marker
       *ngFor="let item of dataApp.data"
       [latitude]=   "item.geometry.coordinates[1]"
       [longitude]=  "item.geometry.coordinates[0]"
-      (markerClick)="changeCurrentSite(item.fields['nom_du_site'])"
+      (markerClick)="changeCurrentSite(item)"
     >
-      <agm-snazzy-info-window maxWidth="400" maxHeight="300" [closeWhenOthersOpen]="true" max>
+      <agm-snazzy-info-window maxWidth="400" maxHeight="200" [closeWhenOthersOpen]="true" max>
         <ng-template>
           <h3 *ngIf="item.fields.nom_du_site">
             {{item.fields.nom_du_site}}
         </h3>
-          <ul>
-            <li>Commune : {{item.fields.commune}}</li>
-            <li>Periode(s) : {{item.fields['periode_s']}}</li>
-            <li>Periode(s) : {{item.fields['type_d_intervention']}}</li>
-          </ul>
+
         </ng-template>
       </agm-snazzy-info-window>
     </agm-marker>

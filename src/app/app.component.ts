@@ -28,8 +28,15 @@ export class AppComponent {
     this.sisyphe.getSite('Le dessus-de-Rochefort').subscribe(result => console.log(result));
   }
 
-  changeCurrentSite(siteName: string) {
-    this.currentSite = new Site(siteName);
+  changeCurrentSite(item: any) {
+    const currentSite = {
+      name: item.fields['nom_du_site'],
+      ages: item.fields['periode_s'],
+      date_begin: item.fields['date_debut'],
+      date_end: item.fields['date_fin']
+    } as Site;
+
+    this.currentSite = currentSite;
   }
 
 

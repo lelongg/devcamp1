@@ -1,11 +1,11 @@
 export class Site {
-  private _name;
+  public name: string;
+  public ages: string;
+  public date_begin: string;
+  public date_end: string;
+  public type: string;
 
-  constructor(name: string = '') {
-    this._name = name;
-  }
+  constructor() {
 
-  get name() {
-    return this._name;
-  }
+   }
 }
