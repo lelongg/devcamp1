@@ -1,10 +1,19 @@
+
 <h2>{{title}}</h2>
 <p>{{subtitle}}</p>
+
+
 
 <br/>
 {{resume}}
 
+
+<mat-spinner *ngIf="loading" class="loading"></mat-spinner>
+
 <br/>
+<br/>
+<br/>
+
 <mat-expansion-panel *ngIf="resume !== ''">
   <mat-expansion-panel-header>
     <mat-panel-title>

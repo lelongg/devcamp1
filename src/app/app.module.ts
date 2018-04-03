@@ -7,7 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {ApiDiscoverer} from './dao/service/ApiDiscoverer';
 import {
-  MatButtonModule, MatDatepickerModule, MatExpansionModule, MatFormFieldModule,
+  MatButtonModule, MatDatepickerModule, MatExpansionModule, MatFormFieldModule, MatProgressSpinnerModule,
   MatToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -38,7 +38,8 @@ import {Sisyphe} from './sisyphe';
     AgmSnazzyInfoWindowModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     ApiDiscoverer,

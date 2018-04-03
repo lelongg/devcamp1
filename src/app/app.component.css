@@ -1,6 +1,6 @@
 agm-map{
-  height: 600px;
-  width: 40vw;
+  height: 100vh;
+  width: 50vw;
 }
 
 .content {
@@ -8,5 +8,7 @@ agm-map{
 }
 
 .block {
-  margin: 20px;
+  width: 50vw;
+  padding: 10px 20px;
+  overflow-y: scroll;
 }
