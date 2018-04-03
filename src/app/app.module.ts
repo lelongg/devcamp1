@@ -6,18 +6,24 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {ApiDiscoverer} from './dao/service/ApiDiscoverer';
-import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatDatepickerModule, MatExpansionModule, MatFormFieldModule,
+  MatToolbarModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
 import {DataApp} from './data';
 import {AgmSnazzyInfoWindowModule} from '@agm/snazzy-info-window';
+import {SiteSeeComponent} from './components/site/site.component';
+import {Sisyphe} from './sisyphe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SiteSeeComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,11 +37,13 @@ import {AgmSnazzyInfoWindowModule} from '@agm/snazzy-info-window';
     }),
     AgmSnazzyInfoWindowModule,
     MatFormFieldModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatExpansionModule
   ],
   providers: [
     ApiDiscoverer,
-    DataApp
+    DataApp,
+    Sisyphe
   ],
   bootstrap: [AppComponent]
 })

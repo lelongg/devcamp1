@@ -8,7 +8,9 @@
     <agm-marker
       *ngFor="let item of dataApp.data"
       [latitude]=   "item.geometry.coordinates[1]"
-      [longitude]=  "item.geometry.coordinates[0]">
+      [longitude]=  "item.geometry.coordinates[0]"
+      (markerClick)="changeCurrentSite(item.fields['nom_du_site'])"
+    >
       <agm-snazzy-info-window maxWidth="400" maxHeight="300" [closeWhenOthersOpen]="true" max>
         <ng-template>
           <h3 *ngIf="item.fields.nom_du_site">
@@ -25,7 +27,7 @@
   </agm-map>
 
   <div class="block">
-    <h2>Content</h2>
+    <app-site-see [site]="currentSite" *ngIf="currentSite"></app-site-see>
   </div>
 </div>
 <router-outlet>

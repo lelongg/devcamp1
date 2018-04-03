@@ -1,0 +1,22 @@
+<h2>{{title}}</h2>
+<p>{{subtitle}}</p>
+
+<br/>
+{{resume}}
+
+<br/>
+<mat-expansion-panel *ngIf="resume !== ''">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Plus d'info
+    </mat-panel-title>
+    <mat-panel-description>
+      ...
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>{{content}}</p>
+</mat-expansion-panel>
+
+<br/>
+
+<img *ngFor="let item of gallery" [src]="item" class="thumb"/>
