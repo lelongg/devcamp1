@@ -10,6 +10,8 @@ import {MatButtonModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import {HttpClientModule} from '@angular/common/http';
     MatToolbarModule,
     MatButtonModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //TODO: do not set HERE
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDGLTVcHm_lNl2vNS5qhLgLmjUItxBudkM'
+    })
   ],
   providers: [
     ApiDiscoverer
