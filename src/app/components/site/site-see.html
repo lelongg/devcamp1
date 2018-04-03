@@ -2,8 +2,19 @@
 <h2>{{title}}</h2>
 <p>{{subtitle}}</p>
 
+<mat-list *ngIf="_site">
+  <mat-list-item *ngIf="_site.ages">
+    <h4 mat-line>Periode : {{_site.ages}}</h4>
+  </mat-list-item>
 
+  <mat-list-item *ngIf="_site.type">
+    <h4 mat-line >Type : {{_site.type}}</h4>
+  </mat-list-item>
 
+  <mat-list-item>
+    <h4 mat-line >{{_site.date_begin}} - {{_site.date_end}}</h4>
+  </mat-list-item>
+</mat-list>
 <br/>
 {{resume}}
 

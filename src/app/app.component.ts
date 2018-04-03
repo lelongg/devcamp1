@@ -33,7 +33,8 @@ export class AppComponent {
       name: item.fields['nom_du_site'],
       ages: item.fields['periode_s'],
       date_begin: item.fields['date_debut'],
-      date_end: item.fields['date_fin']
+      date_end: item.fields['date_fin'],
+      type: item.fields['type_d_intervention']
     } as Site;
 
     this.currentSite = currentSite;

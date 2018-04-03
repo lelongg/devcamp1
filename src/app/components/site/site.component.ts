@@ -7,7 +7,7 @@ import {Sisyphe} from '../../sisyphe';
   templateUrl: 'site-see.html',
   styleUrls: ['site-see.scss']
 })
-export class SiteSeeComponent{
+export class SiteSeeComponent {
 
   title: string;
   subtitle: string;
@@ -24,6 +24,7 @@ export class SiteSeeComponent{
 
   @Input()
   set site(site: Site) {
+    console.log('Site', site);
     this._site = site;
     this.loading = true;
     this.title = this.subtitle = this.resume = this.content = '';
@@ -51,7 +52,14 @@ export class SiteSeeComponent{
 
   constructor(private sisyphe: Sisyphe) {
     this.loading = false;
-  }
+    this._site = {
+      name: '',
+      ages: '',
+      date_begin: '',
+      date_end: '',
+      type: ''
+    }
+  }:
 
 
 }
