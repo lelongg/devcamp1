@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {ApiDiscoverer} from './dao/service/ApiDiscoverer';
-import {MatButtonModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -26,11 +26,12 @@ import {AgmSnazzyInfoWindowModule} from '@agm/snazzy-info-window';
     MatButtonModule,
     RouterModule,
     AppRoutingModule,
-    //TODO: do not set HERE
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDGLTVcHm_lNl2vNS5qhLgLmjUItxBudkM'
     }),
-    AgmSnazzyInfoWindowModule
+    AgmSnazzyInfoWindowModule,
+    MatFormFieldModule,
+    MatDatepickerModule
   ],
   providers: [
     ApiDiscoverer,

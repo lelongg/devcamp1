@@ -11,8 +11,6 @@ import {DataApp} from './data';
 })
 export class AppComponent {
 
-
-
   public location: any;
 
   constructor(public dataApp: DataApp) {

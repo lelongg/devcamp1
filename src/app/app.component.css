@@ -1,3 +1,12 @@
-agm-map {
-    height: 600px;
-  }
+agm-map{
+  height: 600px;
+  width: 40vw;
+}
+
+.content {
+  display: flex; /* or inline-flex */
+}
+
+.block {
+  margin: 20px;
+}
