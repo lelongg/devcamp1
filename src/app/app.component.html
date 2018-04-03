@@ -1,11 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
-<h1>Devcamp</h1>
+  <h1>Devcamp</h1>
 </mat-toolbar>
 
-<p>Hello world!</p>
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="location.latitude" [longitude]="location.longitude">
+  <agm-marker
+    *ngFor="let item of dataApp.data"
+    [latitude]=   "item.geometry.coordinates[1]"
+    [longitude]=  "item.geometry.coordinates[0]">
+    <agm-snazzy-info-window [closeWhenOthersOpen]="true">
+        <h3 *ngIf="item.fields.nom_du_site">
+          {{item.fields.nom_du_site}}
+        </h3>
+    </agm-snazzy-info-window>
+  </agm-marker>
 </agm-map>
 
 <router-outlet>

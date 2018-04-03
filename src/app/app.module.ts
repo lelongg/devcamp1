@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
+import {DataApp} from './data';
+import {AgmSnazzyInfoWindowModule} from '@agm/snazzy-info-window';
 
 
 @NgModule({
@@ -27,10 +29,12 @@ import { AgmCoreModule } from '@agm/core';
     //TODO: do not set HERE
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDGLTVcHm_lNl2vNS5qhLgLmjUItxBudkM'
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [
-    ApiDiscoverer
+    ApiDiscoverer,
+    DataApp
   ],
   bootstrap: [AppComponent]
 })
